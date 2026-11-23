@@ -1,0 +1,10 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/dashboard.css"><link rel="stylesheet" href="css/responsive.css"></head><body>
+<header class="top"><a class="brand" href="index.html">Mona<span>.</span></a><nav style="display:flex"><a href="index.html">View site</a><button id="lo">Logout</button></nav></header>
+<main class="dash"><h2>Dashboard</h2>
+<div class="stats"><div><b id="d-a">–</b><span>Assignments</span></div><div><b id="d-p">–</b><span>Projects</span></div><div><b id="d-f">–</b><span>Uploaded files</span></div></div>
+<h3>Quick actions</h3><div class="row"><a class="btn" href="index.html?new=assignment">Upload assignment</a><a class="btn" href="index.html?new=project">Upload project</a>
+<a class="btn ghost" href="index.html#assignments">Manage assignments</a><a class="btn ghost" href="index.html#projects">Manage projects</a></div>
+<h3>Recent uploads</h3><ul class="recent" id="recent"><li class="empty">Loading…</li></ul></main>
+<script type="module" src="js/dashboard.js"></script></body></html>

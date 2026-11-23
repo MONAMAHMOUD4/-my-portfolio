@@ -1,0 +1,2 @@
+.dash{max-width:900px}.recent{list-style:none;padding:0;display:grid;gap:.5rem}
+.recent li{background:var(--blush);border-radius:14px;padding:.8rem 1rem;display:flex;flex-direction:column}

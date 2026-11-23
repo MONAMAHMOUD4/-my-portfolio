@@ -1,0 +1,16 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin login</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"></head><body class="center-page">
+<form class="login modal" id="f"><h3>Admin login</h3><p class="muted">Only the portfolio owner can sign in.</p>
+<label>Email<input type="email" id="e" value="m8457701@gmail.com" required autocomplete="username"></label>
+<label>Password<input type="password" id="p" required autocomplete="current-password"></label><p class="err" id="er"></p>
+<button class="btn" id="b">Sign in</button><p><a href="index.html">← Back to portfolio</a></p></form>
+<script type="module">
+import { login, isAdmin, logout } from './js/auth.js'; import { configured } from './js/supabase.js';
+const $ = s => document.querySelector(s);
+if (!configured) $('#er').textContent = 'Set your Supabase URL and key in js/config.js first.';
+$('#f').onsubmit = async e => { e.preventDefault(); $('#er').textContent = ''; $('#b').disabled = true;
+  const { error } = await login($('#e').value.trim(), $('#p').value);
+  if (error) { $('#er').textContent = 'Sign-in failed: ' + error.message; $('#b').disabled = false; return; }
+  if (!await isAdmin()) { await logout(); return; } location.href = 'dashboard.html'; };
+</script></body></html>
